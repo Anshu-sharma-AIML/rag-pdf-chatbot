@@ -214,8 +214,9 @@ def main():
 
         st.divider()
 
-        # API Key
-        api_key = st.text_input("🔑 Google Gemini API Key", type="password")
+        # API Key — auto-loaded from Streamlit secrets if available
+        default_key = st.secrets.get("GOOGLE_API_KEY", "")
+        api_key = st.text_input("🔑 Google Gemini API Key", value=default_key, type="password")
         st.markdown("Get your key → [Google AI Studio](https://ai.google.dev/)")
         if not api_key:
             st.warning("Enter your API key to get started.")
