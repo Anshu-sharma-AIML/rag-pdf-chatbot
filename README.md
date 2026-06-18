@@ -2,7 +2,7 @@
 
 > **Chat with your PDF documents using Google Gemini AI — powered by LangChain, FAISS & HuggingFace.**
 
-[![🚀 Live Demo](https://img.shields.io/badge/🚀%20Live%20Demo-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://rag-pdf-chatbot-ni3cbeypwvwx5wrf5xut5q.streamlit.app/)
+[![🚀 Live Demo](https://img.shields.io/badge/🚀%20Live%20Demo-Click%20Here-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://rag-pdf-chatbot-ni3cbeypwvwx5wrf5xut5q.streamlit.app/)
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?style=flat-square&logo=python)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.x-red?style=flat-square&logo=streamlit)
