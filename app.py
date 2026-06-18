@@ -214,12 +214,16 @@ def main():
 
         st.divider()
 
-        # API Key — auto-loaded from Streamlit secrets if available
-        default_key = st.secrets.get("GOOGLE_API_KEY", "")
-        api_key = st.text_input("🔑 Google Gemini API Key", value=default_key, type="password")
-        st.markdown("Get your key → [Google AI Studio](https://ai.google.dev/)")
-        if not api_key:
-            st.warning("Enter your API key to get started.")
+        # API Key — auto-loaded from Streamlit secrets (never shown in UI)
+        secret_key = st.secrets.get("GOOGLE_API_KEY", "")
+        if secret_key:
+            api_key = secret_key
+            st.success("🔐 API Key loaded securely from secrets!")
+        else:
+            api_key = st.text_input("🔑 Google Gemini API Key", type="password")
+            st.markdown("Get your key → [Google AI Studio](https://ai.google.dev/)")
+            if not api_key:
+                st.warning("Enter your API key to get started.")
 
         st.divider()
 
