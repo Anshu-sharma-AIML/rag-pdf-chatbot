@@ -1,0 +1,8 @@
+[project]
+name = "rag-pdf-chatbot"
+version = "1.0.0"
+description = "Chat with multiple PDFs using Google Gemini, LangChain, FAISS & HuggingFace Embeddings"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["rag", "pdf", "chatbot", "langchain", "faiss", "gemini", "nlp", "ai"]

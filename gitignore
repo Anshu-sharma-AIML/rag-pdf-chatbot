@@ -1,0 +1,37 @@
+# Virtual environments
+myenv/
+.venv/
+venv/
+env/
+
+# FAISS index (generated at runtime)
+faiss_index/
+
+# Environment variables
+.env
+.env.local
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# IDE settings
+.vscode/
+.idea/
+
+# Logs
+*.log

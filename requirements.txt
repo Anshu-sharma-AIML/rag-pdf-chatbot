@@ -1,0 +1,29 @@
+# Core framework
+streamlit
+
+# LangChain ecosystem
+langchain
+langchain-core
+langchain-community
+langchain-google-genai
+langchain-huggingface
+
+# Vector store
+faiss-cpu
+
+# Embeddings & NLP models
+sentence-transformers
+transformers
+
+# Google Gemini
+google-ai-generativelanguage
+
+# PDF parsing
+PyPDF2
+
+# Wikipedia retrieval
+wikipedia
+
+# Data utilities
+pandas
+numpy

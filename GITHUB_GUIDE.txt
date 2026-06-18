@@ -1,0 +1,98 @@
+# 🚀 How to Put This Project on GitHub (Step by Step)
+
+## STEP 1 — Create GitHub Account
+- Go to https://github.com
+- Sign up with your email if you don't have an account
+
+---
+
+## STEP 2 — Create a New Repository
+1. Click the green "New" button (top left)
+2. Repository name: `rag-pdf-chatbot`
+3. Description: `Chat with PDFs using Google Gemini AI, LangChain & FAISS`
+4. Set to **Public** (so it shows on your CV)
+5. ❌ Do NOT tick "Add README" (we already have one)
+6. Click **"Create repository"**
+
+---
+
+## STEP 3 — Install Git on Your PC
+- Download from: https://git-scm.com/download/win
+- Install with default settings
+
+---
+
+## STEP 4 — Open Command Prompt in Your Project Folder
+1. Go to your project folder: `E:\rag_pdf_chatbot-main`
+2. Click the address bar at the top
+3. Type `cmd` and press Enter
+
+---
+
+## STEP 5 — Replace Files
+Replace these files in your folder with the ones you downloaded:
+- app.py  ✅
+- rag_pipeline.py  ✅
+- requirements.txt  ✅
+- README.md  ✅ (new file)
+- .gitignore  ✅
+- pyproject.toml  ✅
+
+---
+
+## STEP 6 — Edit Your Social Links in app.py
+Open app.py and find these two lines (around line 107-108):
+
+```
+YOUR_LINKEDIN = "https://www.linkedin.com/in/YOUR_USERNAME"
+YOUR_GITHUB   = "https://github.com/YOUR_USERNAME"
+```
+
+Replace `YOUR_USERNAME` with your actual LinkedIn and GitHub username.
+
+---
+
+## STEP 7 — Run These Git Commands (copy-paste one by one)
+
+```bash
+git init
+git add .
+git commit -m "Initial commit: RAG PDF Chatbot with Gemini AI"
+git branch -M main
+git remote add origin https://github.com/YOUR_GITHUB_USERNAME/rag-pdf-chatbot.git
+git push -u origin main
+```
+
+Replace `YOUR_GITHUB_USERNAME` with your actual GitHub username!
+
+---
+
+## STEP 8 — Verify
+Go to https://github.com/YOUR_USERNAME/rag-pdf-chatbot
+You should see all your files + the beautiful README! 🎉
+
+---
+
+## STEP 9 — Add to Your CV
+
+**Project section entry:**
+
+> **RAG PDF Chatbot** | Python, LangChain, Google Gemini AI, FAISS, Streamlit
+> - Built a Retrieval-Augmented Generation (RAG) system that lets users chat with multiple PDF documents
+> - Implemented semantic search using FAISS vector store and HuggingFace sentence embeddings
+> - Integrated Google Gemini 2.0 Flash LLM via LangChain for context-aware answer generation
+> - Built an additional Wikipedia-based RAG pipeline using RoBERTa for extractive QA
+> - [GitHub Link] https://github.com/YOUR_USERNAME/rag-pdf-chatbot
+
+---
+
+## 💡 What To Say in Interviews
+
+**"What does this project do?"**
+"It's a document Q&A system. Users upload PDFs, the text gets split into chunks and embedded using HuggingFace models, stored in a FAISS vector database. When a user asks a question, we do a similarity search to find relevant chunks and pass them with the question to Google Gemini to generate an accurate answer."
+
+**"What is RAG?"**
+"RAG stands for Retrieval-Augmented Generation. Instead of relying only on the LLM's training data, we first retrieve relevant information from an external source (like a PDF or Wikipedia), then give that context to the LLM to generate a more accurate, grounded answer."
+
+**"Why FAISS?"**
+"FAISS is a highly efficient library from Facebook for similarity search on dense vectors. It's fast and works locally without needing a cloud database."
