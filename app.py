@@ -8,8 +8,8 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
 from datetime import datetime
 
 # Fix for asyncio event loop conflict in some environments
@@ -58,25 +58,23 @@ def get_vector_store(text_chunks):
 def get_conversational_chain(api_key):
     """Build a LangChain QA chain using Gemini 2.0 Flash."""
     prompt_template = """Answer the question as detailed as possible from the provided context.
-    If the answer is not in the provided context, say:
-    'The answer is not available in the uploaded documents.'
-    Do NOT make up an answer.
+If the answer is not in the provided context, say: 'The answer is not available in the uploaded documents.'
+Do NOT make up an answer.
 
-    Context:
-    {context}
+Context:
+{context}
 
-    Question:
-    {question}
+Question:
+{question}
 
-    Answer:
-    """
+Answer:"""
     model = ChatGoogleGenerativeAI(
         model="gemini-2.0-flash",
         temperature=0.3,
         google_api_key=api_key
     )
     prompt = ChatPromptTemplate.from_template(prompt_template)
-    chain = create_stuff_documents_chain(model, prompt)
+    chain = prompt | model | StrOutputParser()
     return chain
 
 
@@ -151,7 +149,8 @@ def handle_user_input(user_question, api_key, pdf_docs):
 
     # Get answer from Gemini
     chain = get_conversational_chain(api_key)
-    answer = chain.invoke({"context": docs, "question": user_question})
+    context_text = "\n\n".join([doc.page_content for doc in docs])
+    answer = chain.invoke({"context": context_text, "question": user_question})
 
     # Save to conversation history
     pdf_names = ", ".join([pdf.name for pdf in pdf_docs])
