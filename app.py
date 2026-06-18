@@ -207,8 +207,8 @@ def main():
         st.title("⚙️ Settings")
 
         # ── Social links (update these with your own URLs) ──
-        YOUR_LINKEDIN = "https://www.linkedin.com/in/YOUR_USERNAME"
-        YOUR_GITHUB   = "https://github.com/YOUR_USERNAME"
+        YOUR_LINKEDIN = "https://www.linkedin.com/in/anshu-sharma13/"
+        YOUR_GITHUB   = "https://github.com/Anshu-sharma-AIML"
 
         st.markdown(
             f"[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)]({YOUR_LINKEDIN}) "
