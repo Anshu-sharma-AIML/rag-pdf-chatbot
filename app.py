@@ -209,10 +209,13 @@ def main():
         # ── Social links (update these with your own URLs) ──
         YOUR_LINKEDIN = "https://www.linkedin.com/in/anshu-sharma13/"
         YOUR_GITHUB   = "https://github.com/Anshu-sharma-AIML"
+        YOUR_EMAIL = "Anshusharma6117@gmail.com"
 
-        st.markdown(
-            f"[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)]({YOUR_LINKEDIN}) "
-            f"[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)]({YOUR_GITHUB})"
+            st.markdown(
+    f"[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)]({YOUR_LINKEDIN}) "
+    f"[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)]({YOUR_GITHUB}) "
+    f"[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:{YOUR_EMAIL})"
+
         )
 
         st.divider()
